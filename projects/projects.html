@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="projects.css">
+    <title>Personal Portfolio</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <a href="#" class="navbar__logo"><i class="ri-code-s-slash-line"></i> divjanar.</a>
+
+        <div class="navbar__menu">
+            <a href="../index.html" class="navbar__link">Home</a>
+            <a href="projects.html" class="navbar__link">Projects</a>
+            <a href="#" class="navbar__link">Skills</a>
+            <a href="../about/about.html" class="navbar__link">About</a>
+        </div>
+
+        <div class="navbar__actions">
+            <div class="navbar__location">
+                <h5>USA, California</h5>
+                <p id="live-time">0:00:00 am</p> <!-- Live time will be inserted here -->
+            </div>
+            <button class="btn">LALALA</button>
+        </div>
+
+    </nav>
+
+
+    </li>
+
+    <!-- Add the script to show live time -->
+    <script>
+        // Function to update the live time
+        function updateTime() {
+            const liveTimeElement = document.getElementById("live-time");
+            
+            // Get the current date and time
+            const now = new Date();
+
+            // Extract hours, minutes, and seconds
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            // Determine AM or PM
+            const ampm = hours >= 12 ? 'pm' : 'am';
+
+            // Convert to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // The hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes; // Add leading zero to minutes
+            seconds = seconds < 10 ? '0' + seconds : seconds; // Add leading zero to seconds
+
+            // Format the time string
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+
+            // Update the live time element on the page
+            liveTimeElement.textContent = timeString;
+        }
+
+        // Update the time every second
+        setInterval(updateTime, 1000);
+
+        // Call the updateTime function immediately to show time as soon as the page loads
+        updateTime();
+    </script>
+
+    
+</body>
+
+</html>
